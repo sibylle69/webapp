@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en-gb">
+<meta charset="utf-8">
+<title>Cook your fridge</title>
+<link rel="stylesheet" href="default.css">
+<link rel="shortcut icon" href="favicon.png">
+<script type="module" src="main.js"></script>
+
+<header>
+    <h1>👩‍🍳Cook what's in your fridge👨‍🍳</h1>
+</header>
+
+<main>
+    <section id="arearecipies" class="left-pane">
+        <h2 id="yourrecipies" class="recipies-heading">Recipes</h2>
+        <div id="availablerec" class="listrecipies"></div>
+
+        <div id="twobuttons" class="buttons"> 
+
+            <button id="search recipes" class="recipes-search" title="Search recipes">Search recipes</button>
+            <button id="new recipe" class="recipe-write" title="Write recipes">Add recipe</button>
+        </div>
+
+    </section>
+
+    <section id="therecipie" class="right-pane">
+        <h3 id="recipietitle" class="title">recipe title</h3>
+        <div id="clickedrecipe" class="recipie"></div>
+    </section>
+</main>
+
+<section id="ing-area" class="ing-pane" role="search">
+    <h4 id="searchban" class="search-ing">
+        <label for="search">Pick your ingredients</label>
+        <input id="search" type="search" placeholder="Search..." class="form-control search-input" data-table="ing-list" aria-label="Search"></input>
+    </h4>
+    <table id="ingredient-table" class="ing-list">
+        <tr>
+            <th>fruits </th>
+            <th>vegetables</th>
+            <th>dairy products</th>
+            <th>starchy food</th>
+            <th>meat/fish</th>
+        </tr>        
+        <tr>
+            <td>apples</td>
+            <td>leeks</td>
+            <td>milk</td>
+            <td>flour</td>
+            <td>bacon</td>
+        </tr>
+        <tr>
+            <td>oranges</td>
+            <td>egg plants</td>
+            <td>cheddar</td>
+            <td>pastry</td>
+            <td>beef</td>
+        </tr>
+        <tr>
+            <td>cheries</td>
+            <td>tomatoes</td>
+            <td>cream</td>
+            <td>rice</td>
+            <td>salmon</td>
+        </tr>
+        <tr>
+            <td>peachs</td>
+            <td>onions</td>
+            <td>whipped cream</td>
+            <td>polenta</td>
+            <td>pork</td>
+        </tr>
+        <tr>
+            <td>lemons</td>
+            <td>asparagus</td>
+            <td>ice cream</td>
+            <td>chesnuts</td>
+            <td>chicken fillet</td>
+        </tr>
+        <tr>
+            <td>strawberries</td>
+            <td>cauliflowers</td>
+            <td>cottage cheese</td>
+            <td>almonds</td>
+            <td>chicken wings</td>
+        </tr>
+        <tr>
+            <td>rasberries</td>
+            <td>peas</td>
+            <td>soft cheese</td>
+            <td>pasta</td>
+            <td>beef</td>
+        </tr>
+        <tr>
+            <td>cantaloupe</td>
+            <td>broccolis</td>
+            <td>sour cream</td>
+            <td>potatoes</td>
+            <td>meat balls</td>
+        </tr>
+        <tr>
+            <td>pears</td>
+            <td>pepers</td>
+            <td>fresh cream</td>
+            <td>eggs</td>
+            <td>sausages</td>
+        </tr>
+        <tr>
+            <td>limes</td>
+            <td>carrots</td>
+            <td>margarine</td>
+            <td>beans</td>
+            <td>sausages</td>
+        </tr>
+        <tr>
+            <td>kiwi berries</td>
+            <td>spinachs</td>
+            <td>ricotta</td>
+            <td>cereals</td>
+            <td>pork ribs</td>
+        </tr>
+        <tr>
+            <td>pineapple</td>
+            <td>mushrooms</td>
+            <td>condensed milk</td>
+            <td>chocolate chunks</td>
+            <td>duck breast</td>
+        </tr>
+        <tr>
+            <td>coconut</td>
+            <td>cucumbers</td>
+            <td>whole milk</td>
+            <td>baking soda</td>
+            <td>ham</td>
+        </tr>
+        <tr>
+            <td>figs</td>
+            <td>parsley</td>
+            <td>pudding</td>
+            <td>brown sugar</td>
+            <td>minced meat</td>
+        </tr>
+        <tr>
+            <td>blackberries</td>
+            <td>corn</td>
+            <td>permesan cheese</td>
+            <td>sugar</td>
+            <td>sardines</td>
+        </tr>
+        <tr>
+            <td>mangos</td>
+            <td>avocados</td>
+            <td>ghee</td>
+            <td>vanilla</td>
+            <td>tuna</td>
+        </tr>
+        <tr>
+            <td>watermelon</td>
+            <td>beets</td>
+            <td>coconut milk</td>
+            <td>walnuts</td>
+            <td>meat kabobs</td>
+        </tr>
+        <tr>
+            <td>apricots</td>
+            <td>endives</td>
+            <td>feta</td>
+            <td>pecan pieces</td>
+            <td>crab</td>
+        </tr>
+        <tr>
+            <td>limes</td>
+            <td>basil</td>
+            <td>skimmed milk</td>
+            <td>bread crumbs</td>
+            <td>white ham</td>
+        </tr>
+        <tr>
+            <td>plums</td>
+            <td>lettuce</td>
+            <td>mozarella</td>
+            <td>peanut butter</td>
+            <td>shrimps</td>
+        </tr>
+ 
+
+    </table>
+    <script  src="ing_filter.js"></script>
+</section>

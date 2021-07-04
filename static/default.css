@@ -1,0 +1,358 @@
+:root
+{
+    --banner-height: 100px;
+    --border-radius0: 2px;
+    --border-radius1: 15px;
+    --border-radius2: 15px;
+    --button-height: 120px;
+    --compose-height: 160px;
+    --message-padding: 1em;
+    --ing-width: 500px;
+    --pane-margin: 2px;
+
+    --transition-duration: 0.167s;
+
+    --palette-base0: #232629;
+    --palette-base1: #2d3136;
+    --palette-base2: #31363b;
+    --palette-base3: #4d5057;
+    --palette-base4: #cbced3;
+    --palette-base5: #eff0f1;
+    --palette-secondary0: #e05941;
+
+    --vegetables0:  #b8cab7;
+    --vegetables1:  #064204;
+    --fruits0: #e4c0d0;
+    --fruits1: #f10372;
+    --dairy-prod0: #bddcfc;
+    --dairy-prod1: #0059ff;
+    --starchy-prod0: #f8f0d2;
+    --starchy-prod1: #b69607;
+
+    --veg-bg: var(--vegetables0);
+    --veg-border: var(--vegetables1);
+    --fruits-bg: var(--fruits0);
+    --fruits-border: var(--fruits1);
+    --dai-bg: var(--dairyproducts0);
+    --dai-border: var(--dairyproducts1);
+
+    --rec-h-bg: var(--palette-base5);
+    --rec-h-fg: var(--palette-secondary0);
+    --rec-fg: var(--palette-base1);
+    --rec-bg: var(--palette-base4);
+    --ing-h-bg: var(--palette-base4);
+    --ing-h-fg: var(--palette-secondary0);
+
+    --input-border: var(--palette-base4);
+    --input-button-bg: var(--palette-base2);
+    --input-active: var(--palette-secondary0);
+    --input-bg: var(--palette-base4);
+}
+
+body
+{
+    font-family: "Gill Sans", sans-serif;
+    font-size: 14pt;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+header
+{
+    background-color: var(--palette-base5);
+    color: var(--palette-secondary0);
+    height: var(--banner-height);
+    padding-left: calc(var(--banner-height) / 2);
+    position: absolute;
+    text-align: center;
+    vertical-align: text-top;
+    width: 100%;
+    top: 0;
+}
+
+main
+{
+    background-color: var(--rec-bg);
+    height: calc(100% - var(--banner-height));
+    left: var(--ing-width);
+    position: absolute;
+    top: var(--banner-height);
+    width: calc(100% - var(--ing-width));
+}
+p
+{
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0.25em;
+}
+  
+p:hover,
+p[aria-selected=true] {
+    background: var(--card-fg);
+    color: var(--card-bg);
+    font-weight: bold;
+    cursor: default;
+}
+
+[name=recipe]
+{
+    cursor: pointer;
+} 
+
+td
+{
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+}
+
+td[aria-selected=true] {
+    cursor: default;
+}
+  
+td:hover,
+td[aria-selected=true] {
+    background: var(--card-fg);
+    color: var(--card-bg);
+    font-weight: bold;
+}
+.ing-pane
+{
+    background-color: var(--rec-h-bg);
+    box-sizing: border-box;
+    height: calc(100% - 2em);
+    line-height: 1.6em;
+    list-style: none;
+    margin: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    width: var(--ing-width);
+    float: left;
+    margin:0;
+    bottom:0;
+}
+.search-ing
+{
+    background-color: var(--rec-h-bg);
+    color: black;
+    font-size: 20px;
+    display: block;
+    height: 50% * var(--banner-height);
+    margin: 0;
+    padding: 1em;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.table
+{
+    color: black;
+    table-layout: auto;
+    width: 95%;
+    border-collapse: separate;
+    border-spacing: 5px;
+    empty-cells: show;
+    position: absolute;
+    vertical-align: middle;
+    overflow: auto;
+    font-size: 13.5px;
+    right: 0;
+}
+td:nth-child(1) {
+    background-color: var(--fruits0);
+    color: rgb(0, 0, 0);
+    border-radius: var(--border-radius2);
+    border-color: var(--fruits1);
+}
+td:nth-child(2) {
+    background-color: var(--vegetables0);
+    color: rgb(0, 0, 0);
+    border-radius: var(--border-radius2);
+    border-color: var(--vegetables1);
+}
+td:nth-child(3) {
+    background-color: var(--dairy-prod0);
+    color: rgb(0, 0, 0);
+    border-radius: var(--border-radius2);
+    border-color: var(--dairy-prod1);
+}
+td:nth-child(4) {
+    background-color: var(--starchy-prod0);
+    color: rgb(0, 0, 0);
+    border-radius: var(--border-radius2);
+    border-color: var(--starchy-prod1);
+}
+td:nth-child(5) {
+    background-color: rgb(248, 222, 207);
+    color: rgb(0, 0, 0);
+    border-radius: var(--border-radius2);
+    border-color: rgb(252, 23, 23);
+}
+
+.recipies-heading
+{
+    background-color: var(--rec-h-bg);
+    color: black;
+    display: block;
+    height: 50% * var(--banner-height);
+    margin: 0;
+    padding: 1em;
+    position: relative;
+    text-align: center;
+    width: 80%;
+}
+.left-pane
+{
+    background-color: var(--palette-base5);
+    color: var(--rec-fg);
+    display: block;
+    height: 100%;
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: relative;
+    text-align: center;
+    width: 50%;
+}
+.listrecipies
+{
+    background-color: var(--palette-base5);
+    color: var(--rec-fg);
+    display: block;
+    height: 70%;
+    margin: 0;
+    overflow-y: scroll;
+    padding-top: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding-left: 0;
+}
+
+.title
+{
+    background-color: var(--rec-h-bg);
+    color: black;
+    display: block;
+    height: 50% * var(--banner-height);
+    margin: 0;
+    padding: 1em;
+    padding-bottom: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.right-pane
+{
+    background-color: var(--palette-base5);
+    color: var(--rec-fg);
+    display: block;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    right: 0;
+    top: 0;
+
+}
+.recipie
+{
+    background-color: var(--palette-base5);
+    color: var(--rec-fg);
+    display: block;
+    height: calc (100% - (50% * var(--banner-height)));
+    margin: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: var(--message-padding);
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.buttons
+{
+    background: var(--palette-base5);
+    bottom: var(--pane-margin);
+    top: var(--pane-margin);
+    box-shadow: none;
+    box-sizing: border-box;
+    height: calc(var(--compose-height) - 2 * var(--pane-margin));
+    width: 90%;
+}
+
+.recipes-search:focus,
+.recipes-search:hover,
+.recipe-write:focus,
+.recipe-write:hover
+{
+    border-color: var(--input-active);
+    height:calc(105% * (calc(var(--compose-height) - 2 * var(--pane-margin))));
+    width:92;
+}
+
+.recipes-search:active,
+.recipe-write:active
+{
+    background-color: var(--input-active);
+    border: none;
+}
+
+.recipes-search:-moz-focus-inner,
+.recipe-write:-moz-focus-inner
+{
+    border: none;
+  }
+
+.recipes-search
+{
+    background: var(--input-active);
+    border: 1px solid var(--input-border);
+    border-radius: var(--border-radius2);
+    bottom: calc((var(--compose-height) - var(--button-height)) / 2 );
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--palette-base5);
+    font-family: inherit;
+    font-size: calc(var(--button-height) / 4);
+    height: var(--button-height);
+    outline: none;
+    padding: var(--input-padding);
+    position: absolute;
+    right: auto;
+    transition-duration: var(--transition-duration);
+    transition-property: border;
+    width: 2 * var(--button-height);
+    vertical-align: middle;
+    padding: 0.8em;
+}
+.recipe-write
+{
+    background: var(--input-active);
+    border: 1px solid var(--input-border);
+    border-radius: var(--border-radius2);
+    bottom: calc((var(--compose-height) - var(--button-height)) / 2 );
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--palette-base5);
+    font-family: inherit;
+    font-size: calc(var(--button-height) / 4);
+    height: var(--button-height);
+    outline: none;
+    padding: var(--input-padding);
+    position: absolute;
+    right: 60%;
+    transition-duration: var(--transition-duration);
+    transition-property: border;
+    width: 2 * var(--button-height);
+    vertical-align: middle;
+    padding: 0.8em;
+}
